@@ -16,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.firebase.messaging.default_notification_channel_id"
+                android:value="43002"/>
+            <meta-data
+                android:name="com.google.firebase.messaging.default_notification_color"
+                android:value="@color/colorPrimaryDark"/>
+            <meta-data
+                android:name="com.google.firebase.messaging.default_notification_icon"
+                android:value="@drawable/push"/>
+        </service>
     </application>
 
 </manifest>
